@@ -15,14 +15,14 @@ export class AiService {
     private readonly bookingRepository: Repository<Booking>,
     @InjectRepository(Umrahbooking)
     private readonly umrahBookingRepository: Repository<Umrahbooking>,
-  ) {}
+  ) { }
 
   async generateItinerary(userId: number) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
       return "AI configuration error: API Key is missing. Please check the backend .env file.";
     }
-    
+
     this.genAI = new GoogleGenerativeAI(apiKey);
     this.model = this.genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
@@ -44,7 +44,7 @@ export class AiService {
 
       // 2. Augment Prompt (RAG - Augmentation)
       let context = "User Bookings Data:\n";
-      
+
       bookings.forEach(b => {
         context += `- Hotel Booking: ${b.hotel.name} in ${b.hotel.city || 'Makkah/Madinah'}. Check-in: ${b.checkIndate}, Check-out: ${b.checkOutDate}\n`;
       });
