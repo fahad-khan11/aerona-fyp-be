@@ -18,6 +18,7 @@ import { InvoicesModule } from './invoices/invoices.module';
 import { InvoiceModule } from './invoice/invoice.module';
 import { HotelInvoiceModule } from './hotel-invoice/hotel-invoice.module';
 import { NotificationsModule } from './notifications/notifications.module';
+import { AiModule } from './ai/ai.module';
 
 // Debug: log raw env at module load time
 console.log('=== APP MODULE LOAD ===');
@@ -64,6 +65,7 @@ console.log('=======================');
     InvoiceModule,
     HotelInvoiceModule,
     NotificationsModule,
+    AiModule,
   ],
   controllers: [AppController],
   providers: [AppService],

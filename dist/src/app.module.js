@@ -27,6 +27,7 @@ const invoices_module_1 = require("./invoices/invoices.module");
 const invoice_module_1 = require("./invoice/invoice.module");
 const hotel_invoice_module_1 = require("./hotel-invoice/hotel-invoice.module");
 const notifications_module_1 = require("./notifications/notifications.module");
+const ai_module_1 = require("./ai/ai.module");
 console.log('=== APP MODULE LOAD ===');
 console.log('DATABASE_URL at module load:', process.env.DATABASE_URL);
 console.log('=======================');
@@ -70,6 +71,7 @@ AppModule = __decorate([
             invoice_module_1.InvoiceModule,
             hotel_invoice_module_1.HotelInvoiceModule,
             notifications_module_1.NotificationsModule,
+            ai_module_1.AiModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
